@@ -5,8 +5,8 @@ import kebabCase from '@/lib/utils/kebabCase';
 import { allBlogs } from 'contentlayer/generated';
 
 export const metadata = {
-  title: 'Blog - Dale Larroder',
-  description: 'My Tags - Dale Larroder',
+  title: 'Blog - Syed Nouman',
+  description: 'My Tags - Syed Nouman',
 };
 
 export default function Tag({ params }: { params: { tag: string } }) {
