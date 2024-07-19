@@ -29,7 +29,7 @@ export const workTiles: WorkTile[] = [
   },
   {
     description: `I designed puzzles in`,
-    title: 'EscapeVerse Puzzle Adventure',
+    title: 'Puzzle Adventure',
     image: {
       src: '/static/images/planner-app.webp',
       width: 600,
@@ -38,7 +38,7 @@ export const workTiles: WorkTile[] = [
   },
   {
     description: `I designed levels in`,
-    title: 'Horror Mystery',
+    title: 'Island Mystery',
     image: {
       src: '/static/images/publication-app.webp',
       width: 600,
