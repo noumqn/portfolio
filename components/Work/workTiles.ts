@@ -22,7 +22,7 @@ export const workTiles: WorkTile[] = [
     description: 'I designed a chapter in',
     title: 'Murder Mystery 2',
     image: {
-      src: '/static/images/murdermystery2.webp',
+      src: '/static/images/murdermystery.webp',
       width: 600,
       height: 554,
     },
