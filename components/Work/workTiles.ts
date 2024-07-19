@@ -22,7 +22,7 @@ export const workTiles: WorkTile[] = [
     description: 'I designed a chapter in',
     title: 'Murder Mystery 2',
     image: {
-      src: '/static/images/field-app.webp',
+      src: '/static/images/murdermystery2.webp',
       width: 600,
       height: 554,
     },
@@ -31,7 +31,7 @@ export const workTiles: WorkTile[] = [
     description: `I designed puzzles in`,
     title: 'Puzzle Adventure',
     image: {
-      src: '/static/images/planner-app.webp',
+      src: '/static/images/puzzleadventure.webp',
       width: 600,
       height: 717,
     },
@@ -40,7 +40,7 @@ export const workTiles: WorkTile[] = [
     description: `I designed levels in`,
     title: 'Island Mystery',
     image: {
-      src: '/static/images/publication-app.webp',
+      src: '/static/images/islandmystery.webp',
       width: 600,
       height: 717,
     },
