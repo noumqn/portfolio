@@ -19,8 +19,8 @@ export const workTiles: WorkTile[] = [
     },
   },
   {
-    description: 'I built',
-    title: 'Aphex Field',
+    description: 'I designed a chapter in',
+    title: 'Murder Mystery 2',
     image: {
       src: '/static/images/field-app.webp',
       width: 600,
@@ -28,8 +28,8 @@ export const workTiles: WorkTile[] = [
     },
   },
   {
-    description: `I maintained`,
-    title: 'Aphex Planner',
+    description: `I designed puzzles in`,
+    title: 'EscapeVerse Puzzle Adventure',
     image: {
       src: '/static/images/planner-app.webp',
       width: 600,
@@ -37,8 +37,8 @@ export const workTiles: WorkTile[] = [
     },
   },
   {
-    description: `I built`,
-    title: 'Aphex Publication',
+    description: `I designed levels in`,
+    title: 'Horror Mystery',
     image: {
       src: '/static/images/publication-app.webp',
       width: 600,
