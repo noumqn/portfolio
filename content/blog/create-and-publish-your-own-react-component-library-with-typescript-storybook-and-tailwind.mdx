@@ -1,234 +1,224 @@
 ---
-title: 'Create and publish your own React component library with Storybook, TypeScript, and Tailwind'
+title: 'Why Airbnb’s Design is a Masterclass in UX/UI'
 date: '2022-09-18'
 tags: ['ReactJS', 'Library', 'Design Systems', 'TypeScript', 'Tailwind', 'NPM', 'Storybook']
 draft: false
-author: 'Dale Larroder'
-summary: 'A guide on how to create your own custom React component library with Storybook, TypeScript, and Tailwind, and publish them to npm.'
+author: 'Syed Nouman'
+summary: 'Airbnb has revolutionized the hospitality industry, and a significant part of its success can be attributed to its exceptional user experience (UX) and user interface (UI) design.'
 ---
+
+<div style={{ maxWidth: '1000px', margin: '2rem auto' }}>
+  <img
+    src="https://news.airbnb.com/wp-content/uploads/sites/4/2022/05/After_Desktop_Mobile.jpg?w=1000"
+    alt="Airbnb redesigned desktop and mobile UI"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '10px',
+      boxShadow: '0 2px 14px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
 
 # Overview
 
-<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+- [The Design Evolution of Airbnb](#the-design-evolution-of-airbnb)
+- [What Makes Airbnb’s UX/UI Exceptional?](#what-makes-airbnbs-uxui-exceptional)
+- [Mobile Experience Done Right](#mobile-experience-done-right)
+- [Built for Everyone](#built-for-everyone)
+- [Why Airbnb’s UI/UX Is a Blueprint](#why-airbnbs-uiux-is-a-blueprint)
+- [Final Thoughts](#final-thoughts)
 
-# What is a component library?
+# About
 
-A [component library](https://langvad.dev/blog/what-is-a-component-library/) is basically a set of re-usable components. It could be a folder inside your project with
-common components used throughout the application. It could be a distributed package on npm. It could also be a part of a bigger design system. A component
-library can be small and it can be large. There are no official rules for what a component library means.
+Airbnb isn’t just a game-changer in the hospitality industry—it’s a gold standard in UX/UI design. The company’s design journey offers a treasure trove of
+lessons for anyone building digital experiences that are intuitive, accessible, and simply delightful.
 
-Some examples of a component library are: Google's [MUI](https://mui.com/), Alibaba's [Ant Design](https://ant.design/) and IBM's design system [Carbon](https://carbondesignsystem.com/).
+# The Design Evolution of Airbnb
 
-# Introduction
+## Humble Beginnings (2008)
 
-I have spent the weekend trying out different guides and tutorials, trying to setup [Storybook](https://storybook.js.org/), [Rollup](https://rollupjs.org/guide/en/), [Yarn](https://yarnpkg.com/), and
-[Jest](https://jestjs.io/) to play nicely together but it was a pain, not to mention I really wanted to make [Vite](https://vitejs.dev/) work with this but to no avail.
+<div style={{ height: '300px', overflow: 'hidden', borderRadius: '10px' }}>
+  <img
+    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1469&auto=format&fit=crop"
+    alt="image"
+    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+  />
+</div>
 
-But behold, I found a package called [TSDX](https://tsdx.io/), it is a zero-config CLI that helps you develop, test, and publish modern TypeScript packages.
+Airbnb started with a straightforward website—basic listings and minimal features.
+The focus was pure utility: connect travelers with places to stay. It wasn’t glamorous, but it worked.
 
-In this guide, I'll be creating my component library `playground`, this is where (I'm hoping) I can show off some of the cool component ideas I have to the world and
-publish it to [NPM](https://www.npmjs.com/) (because I'm cool).
+## Trial, Error & Learning (2008–2010)
 
-# Getting Started
+The team dove into rapid iterations and early user testing. Feedback loops became part of Airbnb’s DNA,
+helping them move from raw layouts to experiences that resonated emotionally and functionally.
 
-## Step 1: Initialize project using tsdx
+## Photos That Sell (2010)
 
-```bash
-npx tsdx create playground
-```
+<div style={{ height: '300px', overflow: 'hidden', borderRadius: '10px' }}>
+  <img
+    src="https://plus.unsplash.com/premium_photo-1684508638760-72ad80c0055f?q=80&w=1471&auto=format&fit=crop"
+    alt="Airbnb mobile app UX"
+    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+  />
+</div>
 
-This will promp you to choose from 3 different options, `basic`, `react`, and `react-with-storybook`.
+The introduction of high-quality photography was a turning point. Listings transformed from bland entries into immersive visual stories.
+Bookings soared—because users could now “see” their stay before clicking ‘Book.’
 
-Please choose `react-with-storybook`
+## Mobile Takes Over (2012)
 
-![create-playground](/static/blog/create-playground.webp)
+<div style={{ maxWidth: '400px', margin: '0 auto' }}>
+  <img
+    src="https://techcrunch.com/wp-content/uploads/2012/01/3_2_search_results.png"
+    alt="Airbnb vertical mobile search screenshot"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
 
-## Step 2: Adding Tailwind
+Airbnb recognized the mobile shift early, launching apps for iOS and Android. The experience? Seamless. Users could explore, reserve, and manage stays on the fly.
+Today, mobile is the dominant platform, and Airbnb continues refining it relentlessly.
 
-We will need to install `tailwindcss`, `postcss` and `autoprefixer`
+## Smarter Search (2013)
 
-```bash
-yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
-```
+<div style={{ maxWidth: '1000px', margin: '2rem auto' }}>
+  <img
+    src="https://techcrunch.com/wp-content/uploads/2013/10/new-search-berlin.png?resize=1200,579"
+    alt="New Airbnb Search UI Berlin"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
 
-After installing the tailwindcss dependencies, we need to create a `tailwind.config.js` file, to do this just run:
+The revamped search bar wasn’t just prettier—it was smarter.
+Filters for amenities, pricing, and experiences made finding the perfect stay a breeze.
 
-```bash
-npx tailwindcss init
-```
+## Present Day (2024 and Beyond)
 
-After generating your `tailwind.config.js` file, you can add the following lines to run
-[Just in Time](https://v2.tailwindcss.com/docs/just-in-time-mode) Mode and specify a purge path to purge any unused CSS
+<div style={{ maxWidth: '900px', margin: '2rem auto' }}>
+  <img
+    src="https://news.airbnb.com/wp-content/uploads/sites/4/2023/10/Guest-Favorites-2023-Winter-Release.jpg"
+    alt="Airbnb Guest Favorites - Winter 2023 Release"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
 
-```js:tailwind.config.js
-module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './stories/*'],
-  ...rest of config
-}
-```
+Airbnb now boasts a sleek, modern interface. From virtual tours to 360° views, it bridges the gap between digital discovery and real-world immersion.
+Every scroll and tap feels purposeful and polished.
 
-Next is to create a `tailwind.css` file at the root of your project, you can name it anything you like by the way,
-I just want to name it tailwind.css because thats the only styles I'll be needing.
+# What Makes Airbnb’s UX/UI Exceptional?
 
-```css:tailwind.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
+## Intuitive Navigation & Thoughtful Journeys
 
-After creating your `tailwind.css` file, we need to integrate it with storybook, for this step, we will need to add another
-dev dependency `@storybook/addon-postcss`
+<div style={{ maxWidth: '800px', margin: '2rem auto' }}>
+  <img
+    src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ymyHT5Io8_RKtldUKtqEeA.png"
+    alt="Airbnb UX flow or diagram"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '6px',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.08)',
+    }}
+  />
+</div>
 
-```bash
-yarn add -D @storybook/addon-postcss
-```
+Airbnb nails the user journey. From discovery to booking, the flow feels natural.
+Every touchpoint is designed with clarity, reducing friction and boosting confidence.
 
-After installing `@storybook/addon-postcss`, we need to add it to `./storybook/main.js`
+Navigation Menus: Minimalist and well-labeled.
 
-```js:./storybook/main.js
-module.exports = {
-  stories: ['../stories/**/*.stories.@(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
-  ],
-  ...rest of config
-};
-```
+Information Architecture: Clean layouts and hierarchy help users quickly find what they need.
 
-And finally, to be able to see our tailwind styles in storybook, we will need to import our `tailwind.css` file in `.storybook/preview.js`
+Emotional Design: Micro-interactions and contextual messaging enhance the emotional layer of the journey.
 
-```js:.storybook/preview.js
-import '../tailwind.css';
-```
+## Search That Feels Personal
 
-We can now test if your tailwind styles are working, lets run storybook
+Airbnb’s search isn’t just about location or price—it’s about you.
+Filters help tailor results to user preferences, and even experiences from hosts are surfaced smartly.
 
-```bash
-yarn storybook
-```
+## Visuals That Tell a Story
 
-You can add the following styles in your `src/index.tsx`
+<div style={{ maxWidth: '720px', margin: '2rem auto' }}>
+  <img
+    src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*wwPlGT11ZDNncJas.gif"
+    alt="Airbnb UI interaction demo"
+    style={{
+      width: '100%',
+      height: 'auto',
+      borderRadius: '8px',
+      boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
+    }}
+  />
+</div>
 
-```tsx:src/index.tsx
-export const Thing: FC<Props> = ({ children }) => {
-  return (
-    <div className="text-xl text-pink-500 p-4 bg-gray-200 rounded-lg">
-      {children || `the snozzberries taste like snozzberries`}
-    </div>
-  );
-};
-```
+Photography: Listings use high-res images that evoke feeling—not just show space.
 
-and you should see our tailwind styles working
+Typography & Colors: Clean fonts and a balanced color palette drive brand recognition and readability.
 
-![tailwind-working](/static/blog/tailwind-working.webp)
+Storytelling: Through curated galleries and descriptions, listings make users feel like they’re already there.
 
-## Step 3: Setup our build configuration
+## Mobile Experience Done Right
 
-Because we added Tailwind to our library, we need to include exporting it's styles in
-our build config.
+Whether on a desktop, tablet, or smartphone, Airbnb delivers consistency.
+The mobile interface is intuitive, responsive, and packed with thoughtful details.
 
-Luckily, Tailwind has great documentation, and we can just use it's default configuration from the
-[optimizing for production](https://tailwindcss.com/docs/optimizing-for-production) guide docs
+Offline Access: Saved stays and itineraries are accessible even without internet.
 
-In our `package.json` file, we just need to add the following
+Performance: Fast load times and smooth transitions make interactions effortless.
 
-```json:package.json
-"scripts": {
-  ... rest of
-"build-tailwind": "npx tailwindcss -o ./dist/styles.css --minify"
-}
-```
+## A Booking Flow That Just Works
 
-And we also need to change our build script to consume our new `build-tailwind` script
+Step-by-Step Clarity: No guessing—just guided steps.
 
-```json:package.json
-"scripts": {
-  ... rest of
-  "build": "tsdx build && yarn build-tailwind",
-}
-```
+Secure Payments: Multiple trusted options reassure users.
 
-To check if your build worked, you can run `yarn build` and check if your build has
-generated a `styles.css` file in your `dist` folder
+Calendar Sync: Avoids double bookings and confusion.
 
-```diff:dist/
-dist/
-index.d.ts
-index.js
-... rest of config
-+styles.css
-```
+## Built for Everyone
 
-The `styles.css` is important because this is what our package consumers will use for our
-styles to take effect in their projects.
+Airbnb champions inclusivity.
 
-## Step 4: Publishing to NPM
+Accessibility Features: Screen reader compatibility, keyboard navigation, and alt text.
 
-First step is to push our code to a Github repo, so just create a new repository
-and push your code to Github,
+Multilingual Support: Content can be translated easily, making the experience global.
 
-```bash
-git init
-git remote add origin <repo origin url>
-git add .
-git commit -m “initial setup
-git push origin master
-```
+Accessible Listings: Many properties highlight features like ramps, grab bars, and wide doorways.
 
-Next step is to login to your NPM account via terminal
+# Why Airbnb’s UI/UX Is a Blueprint
 
-```bash
-npm login
-```
+## User-Centric to the Core
 
-This will prompt you to enter your NPM username, password, and email address.
+Every design decision is filtered through the lens of the user.
+That means empathy, real feedback, and solving real-world problems.
 
-If you don't have an NPM account yet, you can create an account [here](https://www.npmjs.com/signup)
+## Continuous Innovation
 
-After logging in, we are ready to publish our package, but first, we need to change our
-package name to whatever we want, in our case it is called `@dlarroder/playground`
+The design team doesn’t wait for a problem to get big. They test. They tweak. They listen.
+Constant iteration keeps the experience fresh and functional.
 
-```json:package.json
-"name": "@dlarroder/playground",
-"author": "Dale Larroder",
-"version": "0.0.1",
-```
+## Simplicity with Power
 
-After changing our package.json file, we can now run our build so it will pick up our new package name.
+You get robust features—but with zero clutter.
+Airbnb balances capability with ease of use in a way few platforms manage.
 
-```bash
-yarn build
-```
+# Final Thoughts
 
-After building, we will have our updated `/dist` folder with our new name, we can now run our
-final command `npm publish --access public`
+Airbnb’s UX/UI isn’t just pretty pixels. It’s strategic, empathetic, and deeply user-driven. It shows what’s possible when design is treated not as decoration—but as a key business asset. Whether you’re a product designer, developer, or founder, there’s a lot to learn from this masterclass.
 
-```bash
-npm publish --access public
-```
-
-Boom, you are done! you can now check our NPM account for our new package [@dlarroder/playground](https://www.npmjs.com/package/@dlarroder/playground).
-
-# Conclusion
-
-Building and publishing your own package might sound hard at first, but it is really simple when you've tried it,
-you just need to follow some random guide in the internet like this one, (joke) but CLI tools like [tsdx](https://tsdx.io/) really
-makes it simple to bootstrap your very own component library. I really had fun creating my playground package and this
-guide, hope this helps!
-
-<LinkButton>Fancy Button!</LinkButton>
-
-Fun fact! ^This `<LinkButton />` component is from my playground!
-
-You can check out more components on [playground.dalelarroder.com](https://playground.dalelarroder.com/).
+Want to build experiences users love? Take a page from Airbnb’s design playbook.
