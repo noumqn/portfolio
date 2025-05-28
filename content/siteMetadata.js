@@ -5,9 +5,9 @@ const siteMetadata = {
   description: 'Game Designer at Vincell Studios',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'https://dalelarroder.com',
+  siteUrl: 'https://noumqn.vercel.app',
   siteRepo: 'https://github.com',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/nlogo.png',
   image: '/static/images/avatar.webp',
   socialBanner: '/static/images/twitter-card.png',
   email: 'noumanafzal4@gmail.com',
