@@ -3,9 +3,9 @@ import { Project } from './types';
 export const projects: Project[] = [
   {
     title: 'Murder Mystery 2',
-    src: 'murdermystery.webp',
+    src: 'murdermystery2.webp',
     color: '#dbeafe',
-    url: 'https://app.aphex.co/',
+    url: 'https://apps.apple.com/us/app/murder-mystery-hidden-escape/id1580444623',
     role: 'Fullstack Developer',
   },
   {
