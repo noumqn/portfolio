@@ -3,7 +3,7 @@ import { Project } from './types';
 export const projects: Project[] = [
   {
     title: 'Murder Mystery 2',
-    src: 'https://github.com/noumqn/portfolio/raw/refs/heads/main/public/static/images/murdermystery.webp',
+    src: 'murdermystery.webp',
     color: '#dbeafe',
     url: 'https://app.aphex.co/',
     role: 'Fullstack Developer',
